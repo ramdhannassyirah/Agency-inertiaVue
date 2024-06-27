@@ -27,7 +27,8 @@
                         <h1 class="font-bold text-2xl">How We Can Help You ?</h1>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                         <div>
-                            <input type="email" placeholder="Search..." class="input input-bordered rounded-full w-full max-w-xs" />
+                            <input type="email" placeholder="example@gmail.com" class=" py-3 px-6  rounded-full w-full max-w-xs" />
+                            <button class="bg-black py-3 px-6 -ml-12 rounded-full  text-white">Submit</button>
                         </div>
                     </div>
                 </div>
