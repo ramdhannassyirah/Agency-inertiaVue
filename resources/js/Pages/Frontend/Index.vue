@@ -7,10 +7,10 @@
     <section id="about" class="pt-28">
         <About />
     </section>
-    <section class="pt-28">
+    <section id="how-it-works" class="pt-28">
         <HowItWork />
     </section>
-    <section class="pt-28">
+    <section id="contact" class="pt-28">
         <Faq />
     </section>
     <section id="testimoni" class="pt-28">
