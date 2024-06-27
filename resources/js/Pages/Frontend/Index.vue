@@ -13,9 +13,13 @@
     <section class="pt-28">
         <Faq />
     </section>
+    <section class="pt-28">
+        <Testi />
+    </section>
     </Visitor>
 </template>
 <script >
+import Testi from '@/Pages/Frontend/Partials/Testimonials.vue'
 import Faq from '@/Pages/Frontend/Partials/FAQ.vue'
 import HowItWork from '@/Pages/Frontend/Partials/HowItWork.vue'
 import About from '@/Pages/Frontend/Partials/AboutUs.vue'
@@ -32,6 +36,7 @@ export default {
         About,
         HowItWork,
         Faq,
+        Testi,
     }
 }
 </script>

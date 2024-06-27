@@ -1,9 +1,9 @@
 <template lang="">
    <header class="fixed z-50 w-full font-inter" id="myElement">
-        <nav class="bg-white border-gray-200 py-2.5  ">
+        <nav class="bg-white border-gray-200 py-6">
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto lg:px-8 ">
                 <div href="#" class="flex items-center">
-                    <img src="https://desasukarame.com/img/logo.png" class="h-12 mr-3 md:h-20" alt="Desa Sukarame" />
+                   <h1 class="text-2xl font-bold">Tokopia Agenxy</h1>
                 </div>
 
                 <button data-collapse-toggle="mobile-menu-2" type="button"
@@ -22,19 +22,16 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </button>
-
-
-
                 <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1 "
                     id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium lg:items-center lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
                             <Link href=""
-                                class="block py-2 pl-3 pr-4 text-gray-700 lg:hover:text-green-new lg:p-0 {{ Route::current()->getName() == 'index' ? 'text-green-new' : '' }}">Home</Link>
+                                class="block py-2 pl-3 pr-4 text-gray-700 lg:hover:text-green-new lg:p-0">Home</Link>
                         </li>
                         <li>
                             <Link href=""
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0 {{ in_array(Route::current()->getName(), ['destinations', 'destinations.show']) ? 'text-green-new' : '' }}">About Us</Link>
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0 ">About Us</Link>
                         </li>
                         <li>
                             <Link href="/galeri"
@@ -43,18 +40,14 @@
 
                         <li>
                             <Link href=""
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0 {{ in_array(Route::current()->getName(), ['events', 'events.show']) ? 'text-green-new' : '' }}">Testimonials</Link>
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0">Testimonials</Link>
                         </li>
                         <li>
                             <Link href="/artikel"
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0 ">Pricing</Link>
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0 ">Contact</Link>
                         </li>
-
                     </ul>
-
-
                 </div>
-
             </div>
         </nav>
     </header>
@@ -68,17 +61,17 @@
 
 <footer class="bg-white rounded-lg shadow my-4 pt-28  dark:bg-gray-800">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Tokopia Agenxy™</a>. All Rights Reserved.
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
         <li>
            <Link href="#" class="hover:underline me-4 md:me-6">About</Link>
         </li>
         <li>
-           <Link href="#" class="hover:underline me-4 md:me-6">Privacy Policy</Link>
+           <Link href="#" class="hover:underline me-4 md:me-6">Service</Link>
         </li>
         <li>
-           <Link href="#" class="hover:underline me-4 md:me-6">Licensing</Link>
+           <Link href="#" class="hover:underline me-4 md:me-6">Testimonials</Link>
         </li>
         <li>
            <Link href="#" class="hover:underline">Contact</Link>

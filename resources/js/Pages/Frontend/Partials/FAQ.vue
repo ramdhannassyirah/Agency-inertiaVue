@@ -6,17 +6,20 @@
                     <div class="space-y-4 ">
                         <div class="space-y-4">
                             <hr class="bg-black"/>
-                            <div>
-                            <h1>How do i sign up for the project ?</h1>
-                            </div>
+                            <details>
+                            <summary>How do i sign up for the project ?</summary>
+                            <p class="px-4 pt-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            </details>
                             <hr class="bg-black"/>
-                            <div>
-                            <h1>How do i sign up for the project ?</h1>
-                            </div>
+                            <details>
+                            <summary>What things that i should prepare before the project ?</summary>
+                            <p class="px-4 pt-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            </details>
                             <hr class="bg-black"/>
-                            <div>
-                            <h1>How do i sign up for the project ?</h1>
-                            </div>
+                            <details>
+                            <summary>Does my company need help for marketing advices ?</summary>
+                            <p class="px-4 pt-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            </details>
                             <hr class="bg-black"/>
                         </div>
                     </div>
