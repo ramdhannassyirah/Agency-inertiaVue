@@ -5,16 +5,16 @@
         <Hero />
         <Marquee/>
     </header>
-    <section id="about" class="md:pt-20  max-w-7xl mx-auto">
+    <section id="about" class="md:pt-20 dark:mb-10 dark:bg-white dark:bg-opacity-5 dark:backdrop-blur-xl dark:pb-6 md:dark:p-6 md:dark:rounded-xl  max-w-7xl mx-auto">
         <About />
     </section>
-    <section id="how-it-works" class="md:pt-28 max-w-7xl mx-auto">
+    <section id="how-it-works" class="md:pt-28  max-w-7xl mx-auto dark:mb-10 dark:bg-white dark:bg-opacity-5 dark:pb-10 dark:backdrop-blur-xl md:dark:p-6 md:dark:rounded-xl">
         <HowItWork />
     </section>
-    <section id="contact" class="md:pt-28 max-w-7xl mx-auto">
+    <section id="contact" class="md:pt-28 max-w-7xl mx-auto dark:mb-10 dark:bg-white dark:bg-opacity-5 dark:backdrop-blur-xl dark:py-14 md:dark:px-6 md:dark:rounded-xl">
         <Faq />
     </section>
-    <section id="testimoni" class="md:pt-28 max-w-7xl mx-auto">
+    <section id="testimoni" class="md:pt-28 max-w-7xl mx-auto  dark:bg-white dark:bg-opacity-5 dark:backdrop-blur-xl md:dark:p-6 dark:pb-10 md:dark:rounded-xl">
         <Testi />
     </section>
     </Visitor>
