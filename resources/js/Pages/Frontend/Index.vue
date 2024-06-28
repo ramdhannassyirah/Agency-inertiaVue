@@ -1,19 +1,19 @@
 <template lang="">
-    <Head title="Beranda" />
+    <Head title="Home" />
     <Visitor  >
     <header class="">
         <Hero />
     </header>
-    <section class="pt-28">
+    <section id="about" class="pt-28">
         <About />
     </section>
-    <section class="pt-28">
+    <section id="how-it-works" class="pt-28">
         <HowItWork />
     </section>
-    <section class="pt-28">
+    <section id="contact" class="pt-28">
         <Faq />
     </section>
-    <section class="pt-28">
+    <section id="testimoni" class="pt-28">
         <Testi />
     </section>
     </Visitor>

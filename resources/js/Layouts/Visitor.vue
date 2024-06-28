@@ -26,25 +26,25 @@
                     id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium lg:items-center lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
-                            <Link href=""
-                                class="block py-2 pl-3 pr-4 text-gray-700 lg:hover:text-green-new lg:p-0">Home</Link>
+                            <Link href="/home"
+                                class="block py-2 pl-3 pr-4 text-gray-700 hover:opacity-75 transition-opacity duration-300   lg:p-0">Home</Link>
                         </li>
                         <li>
-                            <Link href=""
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0 ">About Us</Link>
+                            <Link href="#about"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b hover:opacity-75 transition-opacity duration-300  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0 ">About Us</Link>
                         </li>
                         <li>
-                            <Link href="/galeri"
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0">Service</Link>
+                            <Link href="#how-it-works"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b hover:opacity-75 transition-opacity duration-300  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0">How It Works</Link>
                         </li>
 
                         <li>
-                            <Link href=""
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0">Testimonials</Link>
+                            <Link href="#contact"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b hover:opacity-75 transition-opacity duration-300  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0 ">Contact</Link>
                         </li>
                         <li>
-                            <Link href="/artikel"
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-new lg:p-0 ">Contact</Link>
+                            <Link href="#testimoni"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b hover:opacity-75 transition-opacity duration-300  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0">Testimonials</Link>
                         </li>
                     </ul>
                 </div>
