@@ -53,7 +53,7 @@
     </header>
 
 
-<section class="max-w-7xl mx-auto min-h-screen pt-10">
+<section class=" mx-auto min-h-screen pt-10">
     <slot/>
 </section>
 
