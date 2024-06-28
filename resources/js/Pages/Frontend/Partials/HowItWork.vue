@@ -1,7 +1,7 @@
 <template lang="">
     <div>
         <div class="HowItWork">
-            <div class="grid md:grid-cols-2 space-y-6 justify-items-between gap-6 px-6 pt-6">
+            <div class="grid md:grid-cols-2 dark:text-white space-y-6 justify-items-between gap-6 px-6 pt-6">
                 <div class="space-y-4">
                     <p>How It Work</p>
                     <h1 class="md:text-5xl font-bold text-3xl">We Support Partner <br/>All Over The World</h1>
@@ -11,7 +11,7 @@
                     <div class="space-y-4">
                         <div class="flex ">
                             <div class="">
-                                <span class="bg-black px-7 py-5 rounded-full text-white">1</span>
+                                <span class="bg-black dark:bg-white dark:text-black px-7 py-5 rounded-full text-white">1</span>
                             </div>
                             <div class="pl-5">
                                 <h1 class="font-bold text-2xl">Publishing</h1>
@@ -20,7 +20,7 @@
                         </div>
                         <div class="flex ">
                             <div class="">
-                                <span class="bg-black px-7 py-5 rounded-full text-white">2</span>
+                                <span class="bg-black px-7 dark:bg-white dark:text-black py-5 rounded-full text-white">2</span>
                             </div>
                             <div class="pl-5">
                                 <h1 class="font-bold text-2xl">Analytics</h1>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="flex ">
                             <div class="">
-                                <span class="bg-black px-7 py-5 rounded-full text-white">3</span>
+                                <span class="bg-black dark:bg-white dark:text-black px-7 py-5 rounded-full text-white">3</span>
                             </div>
                             <div class="pl-5">
                                 <h1 class="font-bold text-2xl">Engagement</h1>
