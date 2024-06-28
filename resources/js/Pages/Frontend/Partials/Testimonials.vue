@@ -1,7 +1,7 @@
 <template lang="">
     <div>
         <div class="testi">
-            <div class="space-y-6 pt-6 px-4">
+            <div class="space-y-6 pt-6 px-4 dark:text-white">
                 <div class="space-y-4">
                     <p>Testimonials</p>
                     <h1 class="md:text-5xl font-bold text-3xl">What Our Clients Say <br/> About Us </h1>

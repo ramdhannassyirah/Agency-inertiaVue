@@ -5,16 +5,16 @@
         <Hero />
         <Marquee/>
     </header>
-    <section id="about" class="pt-20 max-w-7xl mx-auto">
+    <section id="about" class="md:pt-20  max-w-7xl mx-auto">
         <About />
     </section>
-    <section id="how-it-works" class="pt-28 max-w-7xl mx-auto">
+    <section id="how-it-works" class="md:pt-28 max-w-7xl mx-auto">
         <HowItWork />
     </section>
-    <section id="contact" class="pt-28 max-w-7xl mx-auto">
+    <section id="contact" class="md:pt-28 max-w-7xl mx-auto">
         <Faq />
     </section>
-    <section id="testimoni" class="pt-28 max-w-7xl mx-auto">
+    <section id="testimoni" class="md:pt-28 max-w-7xl mx-auto">
         <Testi />
     </section>
     </Visitor>
