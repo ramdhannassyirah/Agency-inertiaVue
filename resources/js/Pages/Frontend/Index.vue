@@ -8,11 +8,12 @@
     <section id="about" class="md:pt-20  max-w-7xl mx-auto">
         <About />
     </section>
-    <section id="how-it-works" class="md:pt-28 max-w-7xl mx-auto">
+    <section id="how-it-works" class="md:pt-28 space-y-4 max-w-7xl mx-auto">
         <HowItWork />
-    </section>
-    <section id="contact" class="md:pt-28 max-w-7xl mx-auto">
         <Faq />
+    </section>
+    <section id="Blog" class="md:pt-28 pt-8 max-w-7xl mx-auto ">
+        <Blog />
     </section>
     <section id="testimoni" class="md:pt-28 max-w-7xl mx-auto">
         <Testi />
@@ -20,6 +21,7 @@
     </Visitor>
 </template>
 <script >
+import Blog from '@/Pages/Frontend/Partials/Blog.vue'
 import Marquee from '@/Components/Marquee/Marquee.vue'
 import Testi from '@/Pages/Frontend/Partials/Testimonials.vue'
 import Faq from '@/Pages/Frontend/Partials/FAQ.vue'
@@ -40,6 +42,7 @@ export default {
         Faq,
         Testi,
         Marquee,
+        Blog,
     }
 }
 </script>
