@@ -26,28 +26,28 @@
                     id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium lg:items-center   lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
-                            <Link href="/home"
+                            <Link href="/"
                                 class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white hover:dark:bg-transparent hover:opacity-75 transition-opacity duration-300   lg:p-0">
                             Home</Link>
                         </li>
                         <li>
-                            <Link href="#about"
+                            <Link href="/#about"
                                 class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white hover:dark:bg-transparent hover:opacity-75 transition-opacity duration-300  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0 ">
                             About Us</Link>
                         </li>
                         <li>
-                            <Link href="#how-it-works"
+                            <Link href="/#how-it-works"
                                 class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white hover:dark:bg-transparent hover:opacity-75 transition-opacity duration-300  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0">
                             How It Works</Link>
                         </li>
 
                         <li>
-                            <Link href="#contact"
+                            <Link href="/blog"
                                 class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white hover:dark:bg-transparent hover:opacity-75 transition-opacity duration-300  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0 ">
-                            Contact</Link>
+                            Blog</Link>
                         </li>
                         <li>
-                            <Link href="#testimoni"
+                            <Link href="/#testimoni"
                                 class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white hover:dark:bg-transparent hover:opacity-75 transition-opacity duration-300  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0">
                             Testimonials</Link>
                         </li>
@@ -71,7 +71,7 @@
     </header>
 
 
-    <section class=" mx-auto min-h-screen pt-10 dark:bg-gray-800">
+    <section class=" mx-auto min-h-screen pt-28 dark:bg-gray-800">
         <slot />
     </section>
 
@@ -102,18 +102,18 @@
 
 </template>
 <script setup>
-    import {
-        onMounted
-    } from 'vue'
-    import {
-        Link
-    } from '@inertiajs/vue3';
-    import {
-        initFlowbite
-    } from 'flowbite'
-    onMounted(() => {
-        initFlowbite();
-    })
+import {
+    onMounted
+} from 'vue'
+import {
+    Link
+} from '@inertiajs/vue3';
+import {
+    initFlowbite
+} from 'flowbite'
+onMounted(() => {
+    initFlowbite();
+})
 </script>
 <style lang="">
 

@@ -5,7 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -19,10 +19,20 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return Inertia::render('Frontend/Index');
 });
 
+Route::get('/blog', function () {
+    return Inertia::render('Frontend/Blog');
+});
+
+Route::get('/blog/{slug}', function () {
+    return Inertia::render('Frontend/BlogDetail');
+});
+Route::get('/login-2', function () {
+    return Inertia::render('Frontend/Login');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
