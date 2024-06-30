@@ -5,6 +5,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\Controllers\BlogController;
+
 Route::get('/home', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -23,13 +25,16 @@ Route::get('/', function () {
     return Inertia::render('Frontend/Index');
 });
 
-Route::get('/blog', function () {
-    return Inertia::render('Frontend/Blog');
+
+Route::get('/dashboard-2', function () {
+    return Inertia::render('Dashboard/Index');
 });
 
-Route::get('/blog/{slug}', function () {
-    return Inertia::render('Frontend/BlogDetail');
-});
+
+
+
+Route::resource('blog', BlogController::class);
+
 Route::get('/login-2', function () {
     return Inertia::render('Frontend/Login');
 });
