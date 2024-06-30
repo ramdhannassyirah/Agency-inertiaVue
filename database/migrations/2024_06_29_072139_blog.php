@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blog', function (Blueprint $table) {
-            $table->integer('id')->nullable();
-            $table->integer('author_id')->nullable();
+        Schema::create('blogs', function (Blueprint $table) {
+            $table->integer('id')->autoIncrement();
+            $table->integer('author_id');
             $table->string('title')->nullable();
             $table->text('content')->nullable();
             $table->string('image')->nullable();

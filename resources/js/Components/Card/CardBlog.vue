@@ -6,7 +6,7 @@
             </div>
             <div class="card-body space-y-3">
                 <div class="h-[60px] overflow-hidden">
-                <a href="/blog/1" class="card-title hover:opacity-80 text-xl font-semibold dark:text-white">
+                <a :href="route('blog.show', 1)" class="card-title hover:opacity-80 text-xl font-semibold dark:text-white">
                     What is Lorem ga Ipsum? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 </a>
                 </div>
