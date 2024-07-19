@@ -5,21 +5,18 @@
         <a href="/blog" class=" text-black dark:text-white hover:opacity-80">View All</a>
         </div>
         <div class="grid md:grid-cols-3 gap-4 items-center justify-items-center">
-            <CardBlog />
-            <CardBlog />
-            <CardBlog />
         </div>
+        <div v-for="blog in blogs" :key="blog.id">
+             <CardBlog :blog="blog" />
+         </div>
     </div>
 </template>
-<script>
+<script setup>
 import CardBlog from '@/Components/Card/CardBlog.vue';
-export default {
 
-    components: {
-        CardBlog
-    }
-
-}
+const props = defineProps({
+    blogs: Object
+})
 </script>
 <style lang="">
 

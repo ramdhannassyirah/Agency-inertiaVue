@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Blog;
+use App\Models\User;
 
 
 
@@ -19,7 +20,13 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Frontend/Blog');
+
+        $blog = Blog::OrderBy('created_at', 'desc')->get();      
+        return Inertia::render('Frontend/Blog', [
+            'blogs' => $blog,
+        ]);
+        
+
     }
 
     /**
@@ -27,7 +34,12 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Dashboard/Writer/Add');
+
+
+        if (auth()->user()->role != 'writer') {
+            $writers = User::where('role', 'writer')->get();
+        }
+        return Inertia::render('Dashboard/Writer/Add')->with(('writers'));
     }
 
     /**
@@ -36,6 +48,7 @@ class BlogController extends Controller
     public function store(BlogRequest $request)
 
     {
+
         $photo = $request->file('image');
         $path = $photo->store('public/images');
 
@@ -46,14 +59,22 @@ class BlogController extends Controller
             'slug' => Str::slug($request->title . '-' . Str::ulid()),
             'image' => $path,
         ]);
+
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        return Inertia::render('Frontend/BlogDetail');
+        // Cari blog berdasarkan ID
+        $blog = Blog::findOrFail($id);
+
+        // Kirim data blog ke view
+        return Inertia::render('Frontend/BlogDetail', [
+            'blog' => $blog
+        ]);
     }
 
     /**

@@ -6,13 +6,13 @@
             <!-- ===== Sidebar End ===== -->
 
             <!-- ===== Content Area Start ===== -->
-            <div class="    ">
+            <div class="">
                 <!-- ===== Header Start ===== -->
                 <Header />
                 <!-- ===== Header End ===== -->
 
                 <!-- ===== Main Content Start ===== -->
-                <main>
+                <main class="max-w-7xl mx-auto">
                     <div class="p-4 sm:ml-64">
                         <div class="p-4  mt-14">
                             <slot />
@@ -29,11 +29,17 @@
 <script>
 import Header from '@/Components/Header.vue'
 import Sidebar from '@/Components/Sidebar.vue'
+import { initFlowbite } from 'flowbite';
 export default {
     components: {
         Header,
         Sidebar,
+    },
+
+    mounted() {
+        initFlowbite();
     }
+
 }
 </script>
 <style lang="">

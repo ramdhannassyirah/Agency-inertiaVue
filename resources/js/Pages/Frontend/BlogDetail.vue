@@ -1,14 +1,12 @@
 <template lang="">
     <Visitor>
-
-        <Head title="Blog Detail" />
+        <Head title="Detail Blog" />
         <div class="mx-auto max-w-7xl px-6">
             <div class="space-y-12">
                 <div class="space-y-4 flex flex-col dark:text-white justify-center items-center ">
-                    <span>12 September 2021</span>
+                    <span>{{ formatDate(blog.created_at) }}</span>
                     <div class="w-1/2 text-center">
-                        <h1 class="md:text-4xl text-xl font-bold ">What is Lorem ga Ipsum? Lorem, ipsum dolor sit
-                            amet consectetur adipisicing elit.</h1>
+                        <h1 class="md:text-4xl text-xl font-bold ">{{ blog.title }}</h1>
                     </div>
                     <div class="w-1/2 text-center">
                         <span>Dibuat oleh Admin</span>
@@ -20,7 +18,7 @@
                 </div>
 
                 <div class="dark:text-white">
-                    <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+                    <p class="text-lg">{{blog.content }}
                     </p>
                 </div>
                 <div>
@@ -41,6 +39,15 @@ import Visitor from '@/Layouts/Visitor.vue';
 import {
     Head
 } from '@inertiajs/vue3';
+
+const props = defineProps({
+    blog: Object
+})
+
+const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'short', day: '2-digit' };
+    return new Date(dateString).toLocaleDateString('en-US', options);
+};
 </script>
 <style lang="">
 

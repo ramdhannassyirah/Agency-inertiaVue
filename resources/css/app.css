@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'flowbite';
 
 *{
     scroll-behavior: smooth;
