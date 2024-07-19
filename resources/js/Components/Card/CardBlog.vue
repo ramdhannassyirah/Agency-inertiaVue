@@ -2,7 +2,7 @@
     <div class="w-full">
         <div class="card max-w-[380px] space-y-4">
             <div>
-                <img class="rounded-lg w-[380px] h-[250px] object-cover object-center" src="@/../../public/img/rakutak.jpeg" alt="Blog Image">
+                <img class="rounded-lg w-[380px] h-[250px] object-cover object-center" :src="blog.image" :alt="blog.title">
             </div>
             <div class="card-body space-y-1">
                 <div class="h-16 overflow-hidden">
@@ -37,6 +37,8 @@ const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'short', day: '2-digit' };
     return new Date(dateString).toLocaleDateString('en-US', options);
 };
+
+
 </script>
 
 <style scoped>

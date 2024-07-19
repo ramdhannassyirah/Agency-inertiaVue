@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Blog;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -21,7 +22,13 @@ class BlogController extends Controller
     public function index()
     {
 
-        $blog = Blog::OrderBy('created_at', 'desc')->get();      
+
+        $blog = Blog::OrderBy('created_at', 'desc')->get();     
+        
+        foreach ($blog as $blogs) {
+            $blogs->image = Storage::url($blogs->image);
+        }
+
         return Inertia::render('Frontend/Blog', [
             'blogs' => $blog,
         ]);
@@ -70,6 +77,9 @@ class BlogController extends Controller
     {
         // Cari blog berdasarkan ID
         $blog = Blog::findOrFail($id);
+
+        // Ambil gambar blog
+        $blog->image = Storage::url($blog->image);
 
         // Kirim data blog ke view
         return Inertia::render('Frontend/BlogDetail', [

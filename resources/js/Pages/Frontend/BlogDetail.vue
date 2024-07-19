@@ -14,7 +14,7 @@
                 </div>
                 <div class="">
                     <img class="rounded-lg w-full md:h-[500px] h-[290px] object-cover object-center"
-                        src="../../../../public/img/rakutak.jpeg">
+                        :src="blog.image" :alt="blog.title">
                 </div>
 
                 <div class="dark:text-white">
