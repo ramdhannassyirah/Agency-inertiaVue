@@ -1,18 +1,18 @@
-<template lang="">
-    <div>
-        <div class="card max-w-[380px]  space-y-4">
-            <div class="">
-                <img class="rounded-lg w-full h-[250px] object-cover object-center" src="../../../../public/img/programmer.jpg">
+<template>
+    <div class="w-full">
+        <div class="card max-w-[380px] space-y-4">
+            <div>
+                <img class="rounded-lg w-[380px] h-[250px] object-cover object-center" src="@/../../public/img/rakutak.jpeg" alt="Blog Image">
             </div>
-            <div class="card-body space-y-3">
-                <div class="h-[60px] overflow-hidden">
-                <a :href="route('blog.show', 1)" class="card-title hover:opacity-80 text-xl font-semibold dark:text-white">
-                    What is Lorem ga Ipsum? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                </a>
+            <div class="card-body space-y-1">
+                <div class="h-16 overflow-hidden">
+                    <a :href="`/blogs/${blog.id}`" class="card-title hover:opacity-80 text-xl font-semibold dark:text-white">
+                        {{ blog.title }}
+                    </a>
                 </div>
                 <div class="text-gray-500 space-x-3">
                     <span>
-                        28 September 2021
+                        {{ formatDate(blog.created_at) }}
                     </span>
                     <span>
                         Dibuat oleh Admin
@@ -22,11 +22,23 @@
         </div>
     </div>
 </template>
-<script>
-export default {
 
-}
+<script setup>
+import { defineProps } from 'vue';
+
+const props = defineProps({
+    blog: {
+        type: Object,
+        required: true
+    }
+});
+
+const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'short', day: '2-digit' };
+    return new Date(dateString).toLocaleDateString('en-US', options);
+};
 </script>
-<style lang="">
 
+<style scoped>
+/* Jika ada gaya khusus yang perlu ditambahkan, tambahkan di sini */
 </style>

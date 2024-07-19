@@ -42,7 +42,7 @@
                         </li>
 
                         <li>
-                            <Link href="/blog"
+                            <Link href="/#Blog"
                                 class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white hover:dark:bg-transparent hover:opacity-75 transition-opacity duration-300  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0  lg:p-0 ">
                             Blog</Link>
                         </li>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FrontendController;
 
 Route::get('/home', function () {
     return Inertia::render('Welcome', [
@@ -21,23 +22,23 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/', function () {
-    return Inertia::render('Frontend/Index');
+
+
+Route::get('/', [FrontendController::class, 'index' ]);
+Route::get('/blog', [FrontendController::class, 'blog']);
+Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blogs.show');
+
+Route::middleware('auth')->group(function () {
+    Route::resource('blog', BlogController::class);
+    
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 
-Route::get('/dashboard-2', function () {
-    return Inertia::render('Dashboard/Index');
-});
 
 
-
-
-Route::resource('blog', BlogController::class);
-
-Route::get('/login-2', function () {
-    return Inertia::render('Frontend/Login');
-});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
