@@ -7,6 +7,7 @@ use Inertia\Inertia;
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/home', function () {
     return Inertia::render('Welcome', [
@@ -29,6 +30,7 @@ Route::get('/blog', [FrontendController::class, 'blog']);
 Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blogs.show');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard',[DashboardController::class,'index']);
     Route::resource('blog', BlogController::class);
     Route::get('/data/blog',[BlogController::class,'dataBlog']);
     
