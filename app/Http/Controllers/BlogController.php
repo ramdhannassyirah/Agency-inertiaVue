@@ -87,6 +87,14 @@ class BlogController extends Controller
         ]);
     }
 
+    public function dataBlog()
+    {
+        $blog = Blog::all();
+        return Inertia::render('Dashboard/Writer/DashboardBlog', [
+            'blog' => $blog
+        ]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

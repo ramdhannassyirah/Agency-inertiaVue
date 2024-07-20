@@ -14,8 +14,9 @@
                             </path>
                         </svg>
                     </button>
-                    <a href="#" class="ml-2 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                       Tokopai
+                    <a href="#"
+                        class="ml-2 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+                        Tokopai
                     </a>
                 </div>
                 <div class="flex items-center">
@@ -43,11 +44,11 @@
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                                         role="menuitem">My Profile</a>
                                 </li>
-                                <li>
-                                    <a :href="(route('logout'))" method="post" as='button'
+                                <form @submit="logout">
+                                    <button type="submit"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                        role="menuitem">logout</a>
-                                </li>
+                                        role="menuitem">Logout</button>
+                                </form>
                             </ul>
                         </div>
                     </div>
@@ -57,9 +58,15 @@
     </nav>
 </template>
 <script>
-export default {
-
-}
+    export default {
+        methods: {
+    async logout() {
+      await this.$inertia.post(route('logout')); // Mengirimkan permintaan POST ke route 'logout'
+      // Redirect ke halaman login atau halaman lain setelah logout berhasil
+      this.$inertia.visit(route('login'));
+    }
+  }
+    }
 </script>
 <style lang="">
 
