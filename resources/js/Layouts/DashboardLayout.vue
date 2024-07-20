@@ -13,8 +13,8 @@
 
                 <!-- ===== Main Content Start ===== -->
                 <main class="max-w-7xl mx-auto">
-                    <div class="p-4 sm:ml-64">
-                        <div class="p-4  mt-14">
+                    <div class="p-4 sm:ml-60">
+                        <div class=" p-4 mt-20">
                             <slot />
                         </div>
                     </div>
