@@ -6,7 +6,7 @@
             </div>
             <div class="card-body space-y-1">
                 <div class="max-h-[64] overflow-hidden">
-                    <a :href="`/blogs/${blog.id}`" class="card-title hover:opacity-80 text-xl font-semibold dark:text-white">
+                    <a :href="`/blog/${blog.id}`" class="card-title hover:opacity-80 text-xl font-semibold dark:text-white">
                         {{ blog.title }}
                     </a>
                 </div>
