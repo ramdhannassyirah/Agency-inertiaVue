@@ -22,18 +22,11 @@ class BlogController extends Controller
     public function index()
     {
 
-
-        $blog = Blog::OrderBy('created_at', 'desc')->get();     
-        
-        foreach ($blog as $blogs) {
-            $blogs->image = Storage::url($blogs->image);
-        }
-
-        return Inertia::render('Frontend/Blog', [
-            'blogs' => $blog,
+        $blog = Blog::all();
+        return Inertia::render('Dashboard/Writer/DashboardBlog', [
+            'blog' => $blog
         ]);
-        
-
+   
     }
 
     /**
@@ -41,8 +34,6 @@ class BlogController extends Controller
      */
     public function create()
     {
-
-
         if (auth()->user()->role != 'writer') {
             $writers = User::where('role', 'writer')->get();
         }
@@ -73,34 +64,29 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show()
     {
-        // Cari blog berdasarkan ID
+
+       
+      
+    }
+
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($id)
+    {
         $blog = Blog::findOrFail($id);
 
         // Ambil gambar blog
         $blog->image = Storage::url($blog->image);
 
         // Kirim data blog ke view
-        return Inertia::render('Frontend/BlogDetail', [
+        return Inertia::render('Dashboard/Writer/Edit', [
             'blog' => $blog
         ]);
-    }
-
-    public function dataBlog()
-    {
-        $blog = Blog::all();
-        return Inertia::render('Dashboard/Writer/DashboardBlog', [
-            'blog' => $blog
-        ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+      
     }
 
     /**
@@ -108,7 +94,40 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // Validasi data yang diterima dari request jika diperlukan
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'image' => 'nullable|image|max:2048', // Validasi untuk file gambar jika ada
+        ]);
+
+        try {
+            // Ambil data blog berdasarkan ID atau gagal jika tidak ditemukan
+            $blog = Blog::findOrFail($id);
+
+            // Update data berdasarkan request
+            $blog->title = $request->input('title');
+            $blog->content = $request->input('content');
+
+            // Handle gambar jika ada perubahan
+            if ($request->hasFile('image')) {
+                // Hapus gambar lama jika ada dan simpan yang baru
+                if ($blog->image) {
+                    Storage::delete($blog->image); // Menghapus gambar lama dari storage
+                }
+                $imagePath = $request->file('image')->store('public/images');
+                $blog->image = $imagePath;
+            }
+
+            // Simpan perubahan ke database
+            $blog->save();
+
+            // Redirect atau kirim respons berhasil
+            return redirect()->route('blog.index')->with('success', 'Blog berhasil diperbarui.');
+        } catch (\Throwable $th) {
+            // Tangani jika terjadi error
+            return back()->withErrors(['error' => 'Gagal memperbarui blog. Silakan coba lagi.']);
+        }
     }
 
     /**

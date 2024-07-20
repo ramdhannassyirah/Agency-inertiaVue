@@ -4,7 +4,7 @@
 
         <div class="">
             <h1 class="font-bold text-2xl mb-4">Data Blog</h1>
-            <a href="/blog/create" class="mb-2 bg-black rounded-md text-white px-4 py-2">Tambah Blog</a>
+            <a href="/blogs/create" class="mb-2 bg-black rounded-md text-white px-4 py-2">Tambah Blog</a>
         </div>
 
         <div class="overflow-x-auto border-2 shadow-md mt-6 sm:rounded-lg">
@@ -38,7 +38,7 @@
                             {{ new Date(blogs . created_at) . toLocaleDateString() }}
                         </td>
                         <td class="px-6 py-4">
-                            <a href="#"
+                            <a :href="`blogs/${blogs.id}/edit`"
                                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         </td>
                     </tr>

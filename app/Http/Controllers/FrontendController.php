@@ -8,6 +8,7 @@ use App\Models\Blog;
 use Ramsey\Uuid\Type\Integer;
 use Illuminate\Support\Facades\Storage;
 
+
 class FrontendController extends Controller
 {
 
@@ -27,12 +28,48 @@ class FrontendController extends Controller
 
     public function blog()
     {
-        $blogs = Blog::all();
+        $blog = Blog::OrderBy('created_at', 'desc')->get();  
+        
+        foreach ($blog as $blogs) {
+            $blogs->image = Storage::url($blogs->image);
+        }
         return Inertia::render('Frontend/Blog', [
-            'blogs' => $blogs
+            'blogs' => $blog
         ]);
     }
 
+    public function detailBlog(string $slug)
+    {
+
+        $blog = Blog::findOrFail($slug);
+
+        // Ambil gambar blog
+        $blog->image = Storage::url($blog->image);
+
+        // Kirim data blog ke view
+        return Inertia::render('Frontend/BlogDetail', [
+            'blog' => $blog
+        ]);
+      
+    }
+
+  
+
+    public function allBlog()
+    {
+        $blog = Blog::OrderBy('created_at', 'desc')->get();     
+        
+        foreach ($blog as $blogs) {
+            $blogs->image = Storage::url($blogs->image);
+        }
+
+        return Inertia::render('Frontend/Blog', [
+            'blogs' => $blog,
+        ]);
+        
+    }
+
+   
 
     
    

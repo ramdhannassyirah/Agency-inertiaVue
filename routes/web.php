@@ -26,13 +26,15 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/', [FrontendController::class, 'index' ]);
-Route::get('/blog', [FrontendController::class, 'blog']);
-Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blogs.show');
+Route::get('/blog',[FrontendController::class,'blog']);
+Route::get('/blog/{id}', [FrontendController::class, 'detailBlog']);
 
-Route::middleware('auth')->group(function () {
+
+
+
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard',[DashboardController::class,'index']);
-    Route::resource('blog', BlogController::class);
-    Route::get('/data/blog',[BlogController::class,'dataBlog']);
+    Route::resource('blogs',BlogController::class);
     
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
