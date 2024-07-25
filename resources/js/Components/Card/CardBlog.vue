@@ -1,12 +1,12 @@
 <template>
-    <div class="w-full">
-        <div class="card max-w-[380px] space-y-4">
+    <div>
+        <div class="card md:max-w-[380px] max-w-[300px]  space-y-4">
             <div>
-                <img class="rounded-lg w-[380px] h-[250px] object-cover object-center" :src="blog.image" :alt="blog.title">
+                <img class="rounded-lg  h-[250px] object-cover object-center" :src="blog.image" :alt="blog.title">
             </div>
             <div class="card-body space-y-1">
-                <div class="max-h-[64] overflow-hidden">
-                    <a :href="`/blog/${blog.id}`" class="card-title hover:opacity-80 text-xl font-semibold dark:text-white">
+                <div class="max-h-[30px] text-ellipsis whitespace-nowrap overflow-hidden">
+                    <a :href="`/blog/${blog.slug}`" class="card-title hover:opacity-80 text-xl font-semibold dark:text-white">
                         {{ blog.title }}
                     </a>
                 </div>

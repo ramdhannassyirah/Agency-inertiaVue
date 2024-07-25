@@ -13,20 +13,20 @@
             <HowItWork />
             <Faq />
         </section>
-        <section id="Blog" class="md:pt-28 pt-8 max-w-7xl mx-auto ">
+        <section id="Blog" class="md:pt-28 pt-8 lg:max-w-7xl mx-auto ">
             <div class="blog space-y-6 px-4">
                 <div class="flex justify-between items-center">
                     <h1 class="font-bold text-3xl dark:text-white">Blog</h1>
                     <a href="/blog" class=" text-black dark:text-white hover:opacity-80">View All</a>
                 </div>
-                <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4  items-center  justify-items-center">
+                <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-4 items-center justify-items-center">
                     <div v-for="blog in blogs" :key="blog.id">
                         <CardBlog :blog="blog" />
                     </div>
                 </div>
             </div>
         </section>
-        <section id="testimoni" class="md:pt-28 max-w-7xl mx-auto">
+        <section id="testimoni" class="md:pt-28 lg:max-w-7xl mx-auto">
             <Testi />
         </section>
     </Visitor>

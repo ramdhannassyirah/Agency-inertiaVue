@@ -133,8 +133,18 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        // Ambil data blog berdasarkan ID atau gagal jika tidak ditemukan
+        $blog = Blog::findOrFail($id);
+
+        // Hapus gambar lama jika ada
+        if ($blog->image) {
+            Storage::delete($blog->image);
+        }
+
+        // Hapus blog dari database
+        $blog->delete();
+
     }
 }
