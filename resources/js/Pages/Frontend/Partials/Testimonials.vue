@@ -7,7 +7,7 @@
                     <h1 class="md:text-5xl font-bold text-3xl">What Our Clients Say <br/> About Us </h1>
                 </div>
                 <div>
-                    <div class="overflow-x-auto no-scrollbar">
+                    <div class="overflow-x-auto  no-scrollbar">
                         <div class="">
                             <div class="inline-flex gap-4">
                                 <CardProduct />

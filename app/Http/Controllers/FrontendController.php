@@ -38,18 +38,21 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function detailBlog(string $slug)
+    public function detailBlog($slug)
     {
-
-        $blog = Blog::findOrFail($slug);
-
-        // Ambil gambar blog
-        $blog->image = Storage::url($blog->image);
-
-        // Kirim data blog ke view
-        return Inertia::render('Frontend/BlogDetail', [
-            'blog' => $blog
-        ]);
+        try {
+            $blog = Blog::where('slug', $slug)->firstOrFail();
+            
+            // Ubah URL gambar jika perlu
+            $blog->image = Storage::url($blog->image);
+    
+            // Kirim data blog ke view
+            return Inertia::render('Frontend/BlogDetail', [
+                'blog' => $blog
+            ]);
+        } catch (ModelNotFoundException $e) {
+            abort(404);
+        }
       
     }
 

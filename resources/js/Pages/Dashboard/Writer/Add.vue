@@ -54,8 +54,7 @@
         },
         methods: {
             submit() {
-                this.$inertia.post('/blog', this.form)
-
+                this.$inertia.post('/blogs', this.form)
                 console.log(this.form)
             }
         },
