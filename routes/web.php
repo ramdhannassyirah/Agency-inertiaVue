@@ -46,8 +46,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/testimonials/create', [TestimoniController::class, 'create']);
     Route::post('/testimonials', [TestimoniController::class, 'store']);
     Route::get('/testimonials/{id}/edit', [TestimoniController::class, 'edit']);
-    Route::put('/testimonials/{id}', [TestimoniController::class, 'update'])->name('blogs.update');
-    Route::delete('/testimonials/{id}', [TestimoniController::class, 'destroy']);
+    Route::put('/testimonials/{id}', [TestimoniController::class, 'update'])->name('testimonials.update');
+    Route::delete('/testimonials/{id}', [TestimoniController::class, 'destroy'])->name('testimonials.destroy');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

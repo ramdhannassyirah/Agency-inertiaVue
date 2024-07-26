@@ -1,4 +1,5 @@
 <template>
+    <div class="">
     <Head title="Data Blog"/>
     <DashboardLayout>
 
@@ -42,6 +43,7 @@
             </table>
         </div>
     </DashboardLayout>
+    </div>
 </template>
 
 <script >
